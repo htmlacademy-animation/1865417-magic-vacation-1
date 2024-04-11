@@ -2,9 +2,54 @@
   position: relative;
 
   &:hover {
-    .social-block__list {
-      opacity: 1;
+    .social-block__link {
       pointer-events: auto;
+
+      &--fb {
+        svg {
+          opacity: 1;
+          transition: width 0.3s 0.1s, height 0.3s 0.1s, opacity 0.3s 0.1s,
+            color 0.2s;
+          width: 0.8rem;
+          height: 1.7rem;
+
+          @media (min-width: $stop-scaling) {
+            width: 8px;
+            height: 17px;
+          }
+        }
+      }
+
+      &--insta {
+        svg {
+          opacity: 1;
+          transition: width 0.3s 0.3s, height 0.3s 0.3s, opacity 0.3s 0.3s,
+            color 0.2s;
+          width: 1.5rem;
+          height: 1.5rem;
+
+          @media (min-width: $stop-scaling) {
+            width: 15px;
+            height: 15px;
+          }
+        }
+      }
+
+      &--vk {
+        svg {
+          opacity: 1;
+          transition: width 0.3s 0.5s, height 0.3s 0.5s, opacity 0.3s 0.5s,
+            color 0.2s;
+
+          width: 1.7rem;
+          height: 1rem;
+
+          @media (min-width: $stop-scaling) {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
     }
   }
 }
@@ -35,6 +80,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width 0.3s, height 0.3s, background-color 0.4s;
   }
 
   svg {
@@ -46,11 +92,15 @@
 
   &:hover,
   .social-block--active & {
-    color: $c-purple;
+    color: $c-light;
+    transition: color 0.4s;
 
     &::before {
       width: 112.5%;
       height: 112.5%;
+      background-color: $c-purple;
+      border-color: $c-purple;
+      transition: background-color 0.4s;
     }
   }
 
@@ -63,7 +113,7 @@
     }
 
     & + .social-block__list {
-      opacity: 1;
+      // opacity: 1;
       pointer-events: auto;
     }
   }
@@ -87,7 +137,7 @@
   top: 100%;
   right: 0;
   margin-top: 1.5rem;
-  opacity: 0;
+  // opacity: 0;
   pointer-events: none;
 
   @media (min-width: $stop-scaling) {
@@ -100,7 +150,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    opacity: 1;
+    // opacity: 1;
     pointer-events: auto;
   }
 
@@ -110,7 +160,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    opacity: 1;
+    // opacity: 1;
     pointer-events: auto;
   }
 
@@ -128,18 +178,19 @@
   }
 
   &:hover {
-    opacity: 1;
+    // opacity: 1;
     pointer-events: auto;
   }
 
   &:focus-within {
-    opacity: 1;
+    // opacity: 1;
     pointer-events: auto;
   }
 
   .social-block--active & {
-    opacity: 1;
+    // opacity: 1;
     pointer-events: auto;
+    transition: color 0.3s;
   }
 
   li {
@@ -208,37 +259,28 @@
 
   &--fb {
     svg {
-      width: 0.8rem;
-      height: 1.7rem;
-
-      @media (min-width: $stop-scaling) {
-        width: 8px;
-        height: 17px;
-      }
+      width: 0;
+      height: 0;
+      opacity: 0;
+      transition: width 0.3s, height 0.3s, opacity 0.3s, color 0.2s;
     }
   }
 
   &--insta {
     svg {
-      width: 1.5rem;
-      height: 1.5rem;
-
-      @media (min-width: $stop-scaling) {
-        width: 15px;
-        height: 15px;
-      }
+      width: 0;
+      height: 0;
+      opacity: 0;
+      transition: width 0.3s, height 0.3s, opacity 0.3s, color 0.2s;
     }
   }
 
   &--vk {
     svg {
-      width: 1.7rem;
-      height: 1rem;
-
-      @media (min-width: $stop-scaling) {
-        width: 10px;
-        height: 10px;
-      }
+      width: 0;
+      height: 0;
+      opacity: 0;
+      transition: width 0.3s, height 0.3s, opacity 0.3s, color 0.2s;
     }
   }
 }
