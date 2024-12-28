@@ -93,6 +93,7 @@
   text-transform: uppercase;
   font-size: 2.4rem;
   line-height: 1.27;
+  animation: visibleIntroMessage 1s;
 
   @media (min-width: $stop-scaling) {
     width: 509px;
@@ -115,6 +116,18 @@
 
   p {
     margin: 0;
+  }
+
+  @keyframes visibleIntroMessage {
+    0% {
+      transform: translateY(30%);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   svg {
